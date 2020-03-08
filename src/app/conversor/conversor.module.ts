@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConversorComponent } from './component';
 import { MoedaService, ConversorService } from './services';
 import { NumeroDirective } from './directives';
-//import { ModalCotacaoComponent } from './utils';
-//import { DataBrPipe } from './pipes';
+import { ModalCotacaoComponent } from './utils';
+import { DataBrPipe } from './pipes';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { NumeroDirective } from './directives';
   declarations: [
   	ConversorComponent,
   	NumeroDirective,
-  	//ModalCotacaoComponent,
-  	//DataBrPipe
+  	ModalCotacaoComponent,
+  	DataBrPipe,
   ],
   exports: [
   	ConversorComponent
