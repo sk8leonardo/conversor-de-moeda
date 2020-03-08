@@ -17,9 +17,9 @@
      * @return Observable<ConversaoResponse>
      */
     converter(conversao: Conversao): Observable<any> {
-    let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
-    return this.http
-        .get(this.BASE_URL + params);
+      let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
+      return this.http
+      .get(this.BASE_URL + params);
     }
 
     /**
@@ -29,12 +29,11 @@
      * @param Conversao conversao
      * @return number
      */
-    cotacaoPara(conversaoResponse: ConversaoResponse, 
-  conversao: Conversao): number {
-    if (conversaoResponse === undefined) {
-    return 0;
-    }
-    return conversaoResponse.rates[conversao.moedaPara];
+    cotacaoPara(conversaoResponse: ConversaoResponse, conversao: Conversao): number {
+      if (conversaoResponse === undefined) {
+        return 0;
+      }
+      return conversaoResponse.rates[conversao.moedaPara];
     }
 
     /**
@@ -44,13 +43,11 @@
      * @param Conversao conversao
      * @return string
      */
-    cotacaoDe(conversaoResponse: ConversaoResponse, 
-  conversao: Conversao): string {
-    if (conversaoResponse === undefined) {
-    return '0';
-    }
-    return (1 / conversaoResponse.rates[conversao.moedaPara])
-    .toFixed(4);
+    cotacaoDe(conversaoResponse: ConversaoResponse, conversao: Conversao): string {
+      if (conversaoResponse === undefined) {
+        return '0';
+      }
+      return (1 / conversaoResponse.rates[conversao.moedaPara]).toFixed(4);
     }
 
     /**
